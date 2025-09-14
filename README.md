@@ -267,7 +267,6 @@ npm test
 * **ID generation:** IDs are created as `tasks.tasks.length + 1`. This can collide if tasks are deleted. Use a stronger ID strategy (UUIDs or track lastId) in production.
 * **Error responses:** Currently endpoints often return an empty body with error status codes. Consider returning JSON error messages to make debugging easier (e.g., `{ "error": "Task not found" }`).
 * **Concurrency:** Since the store is a JSON file and the app keeps it in memory, concurrent requests that mutate data can lead to race conditions. For multi-user usage, move to a proper DB.
-* **Input sanitation:** Currently only basic type checks exist. Consider trimming strings and limiting field lengths.
 
 ---
 
